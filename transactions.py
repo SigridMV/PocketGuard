@@ -35,5 +35,9 @@ def get_transactions(user_id):
 
     # Retrieve and print each transaction in the query result
     transactions = transactions_ref.stream()
-    for transaction in transactions:
-        print(transaction.id, transaction.to_dict())
+    transactions_list = list(transactions) 
+    if not transactions_list:
+        print("No transactions registered.")
+    else:
+        for transaction in transactions_list:
+            print(transaction.id, transaction.to_dict())

@@ -27,6 +27,12 @@ def sign_in_user(email, password):
     print("Invalid credentials.")
     return None # Return None if authentication fails
 
+def sign_out_user(user_id):
+    # Placeholder function for actual sign-out process
+    print(f"User {user_id} signed out.")
+    return None
+
+
 def update_user(user_id, name=None, lastname=None, email=None):
     # Update user information if new values are provided
     user_ref = db.collection('Users').document(user_id)
